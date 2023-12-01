@@ -1,15 +1,47 @@
 import React from "react";
-import CustomLink from "../../components/atoms/CustomLink";
-import {themes} from "../../styles/themes";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHouse} from "@fortawesome/free-solid-svg-icons";
-import CustomLinkIcon from "../../components/atoms/CustomLinkIcon";
-import MixLinkIcon from "../../components/molecules/MixLinkIcon";
 import NavBar from "../../components/organisms/NavBar";
+import MainTitle from "../../components/atoms/MainTitle";
+import {
+    CustomCheckbox,
+    CustomForm,
+    CustomFormItem,
+    CustomInput,
+    CustomNormalLink,
+    CustomSubmitButton
+} from "../../styles/global";
+import {ContainerForm, ContainerFormCheck} from "./style";
 
 function LoginForm() {
     return (
-        <NavBar></NavBar>
+        <div>
+            <NavBar></NavBar>
+            <MainTitle>Login</MainTitle>
+            <ContainerForm>
+                <CustomForm layout="vertical">
+                    <CustomFormItem name="Email" label="Email">
+                        <CustomInput type="email"/>
+                    </CustomFormItem>
+                    <CustomFormItem name="password"  label="Password">
+                        <CustomInput type="password"/>
+                    </CustomFormItem>
+                    <ContainerFormCheck>
+                        <CustomFormItem>
+                            <CustomFormItem name="remember" valuePropName="checked" noStyle>
+                                <CustomCheckbox>Remember me</CustomCheckbox>
+                            </CustomFormItem>
+                        </CustomFormItem>
+                        <CustomNormalLink to="forgotten-password">
+                            Forgot password ?
+                        </CustomNormalLink>
+                    </ContainerFormCheck>
+                    <CustomFormItem>
+                        <CustomSubmitButton type="primary" htmlType="submit" className="login-form-button">
+                            Submit
+                        </CustomSubmitButton>
+                    </CustomFormItem>
+                </CustomForm>
+            </ContainerForm>
+        </div>
     )
 }
 

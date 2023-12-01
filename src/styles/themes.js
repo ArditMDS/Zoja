@@ -9,6 +9,9 @@ export const themes = {
         },
         white: {
             classic: '#FFFFFF'
+        },
+        red: {
+            classic: '#CE5A67'
         }
     }
 }

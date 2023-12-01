@@ -8,7 +8,7 @@ function CustomLogin() {
                 Login
             </CustomLoginStyle>
             <CustomRegisterStyle to='test'>
-                Sign in
+                Sign up
             </CustomRegisterStyle>
         </CustomDiv>
     )
