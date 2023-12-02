@@ -4,5 +4,5 @@ export const TitleNameStyle = styled.p `
   font-family: Garamond;
   font-size: 96px;
   font-weight: bold;
-  margin-right: 200px;
+  margin: 0 200px 0 0;
 `

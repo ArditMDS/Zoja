@@ -1,8 +1,10 @@
 import React from "react";
-import {NavBarStyle} from "./style";
-import MixLinkIcon from "../../molecules/MixLinkIcon";
 import {faBookOpen, faEnvelope, faHouse, faInfoCircle, faNewspaper} from "@fortawesome/free-solid-svg-icons";
+
+import {NavBarStyle} from "./style";
 import {themes} from "../../../styles/themes";
+
+import MixLinkIcon from "../../molecules/MixLinkIcon";
 import TitleName from "../../atoms/TitleName";
 import CustomLogin from "../../atoms/CustomLogin";
 

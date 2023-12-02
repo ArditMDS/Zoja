@@ -10,11 +10,13 @@ import {
     CustomSubmitButton
 } from "../../styles/global";
 import {ContainerForm, ContainerFormCheck} from "./style";
+import Footer from "../../components/organisms/Footer";
+import {themes} from "../../styles/themes";
 
 function LoginForm() {
     return (
         <div>
-            <NavBar></NavBar>
+            <NavBar/>
             <MainTitle>Login</MainTitle>
             <ContainerForm>
                 <CustomForm layout="vertical">
@@ -30,7 +32,7 @@ function LoginForm() {
                                 <CustomCheckbox>Remember me</CustomCheckbox>
                             </CustomFormItem>
                         </CustomFormItem>
-                        <CustomNormalLink to="forgotten-password">
+                        <CustomNormalLink color={themes.color.secondary.classic} to="forgotten-password">
                             Forgot password ?
                         </CustomNormalLink>
                     </ContainerFormCheck>
@@ -41,6 +43,7 @@ function LoginForm() {
                     </CustomFormItem>
                 </CustomForm>
             </ContainerForm>
+            <Footer/>
         </div>
     )
 }

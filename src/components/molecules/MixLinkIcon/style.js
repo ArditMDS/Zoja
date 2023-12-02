@@ -5,3 +5,4 @@ export const MixLinkIconStyle = styled.div `
   height: fit-content;
   display: inline-block;
 `
+
