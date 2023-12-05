@@ -11,7 +11,7 @@ const routes = {
     },
     homepage: {
         path: '/homepage',
-        name: 'homepage',
+        name: 'CLIENT',
         access: 'CLIENT'
     }
 }

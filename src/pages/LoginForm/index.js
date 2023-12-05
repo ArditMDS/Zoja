@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../../components/organisms/NavBar";
 import MainTitle from "../../components/atoms/MainTitle";
 import {
     CustomCheckbox,
@@ -10,18 +9,16 @@ import {
     CustomSubmitButton
 } from "../../styles/global";
 import {ContainerForm, ContainerFormCheck} from "./style";
-import Footer from "../../components/organisms/Footer";
 import {themes} from "../../styles/themes";
 import useAuth from "../../hooks/useAuth";
 
 function LoginForm() {
     const { login } = useAuth()
     const onFinish = async (formValues) => {
-        await login({ email: formValues.email, password: formValues.password })
+        await login({ email: formValues.email, password: formValues.password, remember: formValues.remember })
     }
     return (
         <div>
-            <NavBar/>
             <MainTitle>Login</MainTitle>
             <ContainerForm>
                 <CustomForm
@@ -30,7 +27,7 @@ function LoginForm() {
                 >
                     <CustomFormItem
                         name="email"
-                        label="email"
+                        label="Email"
                         rules={[
                             {
                                 type: 'email',
@@ -38,7 +35,7 @@ function LoginForm() {
                             },
                             {
                                 required: true,
-                                message: 'You need an email',
+                                message: 'You need to enter an email',
                             },
                         ]}
                     >
@@ -50,7 +47,7 @@ function LoginForm() {
                         rules={[
                             {
                                 required: true,
-                                message: 'You need a password',
+                                message: 'You need to enter a password',
                             },
                         ]}
                     >
@@ -58,7 +55,7 @@ function LoginForm() {
                     </CustomFormItem>
                     <ContainerFormCheck>
                         <CustomFormItem>
-                            <CustomFormItem name="remember" valuePropName="checked" noStyle>
+                            <CustomFormItem name="remember" valuePropName="checked">
                                 <CustomCheckbox>Remember me</CustomCheckbox>
                             </CustomFormItem>
                         </CustomFormItem>
@@ -73,7 +70,6 @@ function LoginForm() {
                     </CustomFormItem>
                 </CustomForm>
             </ContainerForm>
-            <Footer/>
         </div>
     )
 }

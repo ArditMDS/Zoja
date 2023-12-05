@@ -35,14 +35,14 @@ function useAuth() {
             })
     }
 
-    const login = async ({email, password}) => {
+    const login = async ({email, password, remember}) => {
         await fetch(`/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
             },
-            body: JSON.stringify({email, password}),
+            body: JSON.stringify({email, password, remember}),
         })
             .then((res) => res.json())
             .then(async (response) => {
@@ -50,8 +50,7 @@ function useAuth() {
                     localStorage.setItem('token', response.token)
                     await me()
                     message.success('Connexion réussie. Bienvenue !')
-                    //navigate(homeRouteUtils(auth.decodeJwt().roles[0]))
-                    navigate(homeRouteUtils(auth.decodeJwt().roles[0].role))
+                    navigate(homeRouteUtils(auth.decodeJwt().roles.role))
                 } else {
                     message.error('Votre mot de passe ou votre email sont incorrects')
                 }
