@@ -12,18 +12,48 @@ import {
 import {ContainerForm, ContainerFormCheck} from "./style";
 import Footer from "../../components/organisms/Footer";
 import {themes} from "../../styles/themes";
+import useAuth from "../../hooks/useAuth";
 
 function LoginForm() {
+    const { login } = useAuth()
+    const onFinish = async (formValues) => {
+        await login({ email: formValues.email, password: formValues.password })
+    }
     return (
         <div>
             <NavBar/>
             <MainTitle>Login</MainTitle>
             <ContainerForm>
-                <CustomForm layout="vertical">
-                    <CustomFormItem name="Email" label="Email">
+                <CustomForm
+                    layout="vertical"
+                    onFinish={onFinish}
+                >
+                    <CustomFormItem
+                        name="email"
+                        label="email"
+                        rules={[
+                            {
+                                type: 'email',
+                                message: "This email is not valid",
+                            },
+                            {
+                                required: true,
+                                message: 'You need an email',
+                            },
+                        ]}
+                    >
                         <CustomInput type="email"/>
                     </CustomFormItem>
-                    <CustomFormItem name="password"  label="Password">
+                    <CustomFormItem
+                        name="password"
+                        label="Password"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'You need a password',
+                            },
+                        ]}
+                    >
                         <CustomInput type="password"/>
                     </CustomFormItem>
                     <ContainerFormCheck>
