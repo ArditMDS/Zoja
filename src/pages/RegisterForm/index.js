@@ -11,14 +11,15 @@ function RegisterForm() {
 
     const onFinish = async(formValues) => {
         if (formValues.password === formValues.confirm_password) {
-            fetch(`/register`, {
+            fetch(`/api/register`, {
                 method: 'POST',
                 body: JSON.stringify({
                     first_name: formValues.first_name,
                     last_name: formValues.last_name,
-                    authentification_name: formValues.authentification_name,
+                    auth_name: formValues.authentification_name,
                     email: formValues.email,
-                    password: formValues.password
+                    password: formValues.password,
+                    roles: {role: "CLIENT"}
                 })
             })
                 .then((res) => res.json())
@@ -74,7 +75,20 @@ function RegisterForm() {
                    <CustomFormItem name="authentification_name" label="ID">
                        <CustomInput type="text"/>
                    </CustomFormItem>
-                   <CustomFormItem name="email" label="Email">
+                   <CustomFormItem
+                       name="email"
+                       label="Email"
+                       rules={[
+                           {
+                               type: 'email',
+                               message: "This email is not valid",
+                           },
+                           {
+                               required: true,
+                               message: 'You need to enter an email',
+                           },
+                        ]}
+                   >
                        <CustomInput type="email"/>
                    </CustomFormItem>
                    <CustomFormItem name="password" label="Password">
