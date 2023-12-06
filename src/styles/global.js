@@ -11,6 +11,7 @@ export const CustomInput = styled(Input) `
 `
 
 export const CustomFormItem = styled(Form.Item) `
+  width: 100%;
   .ant-form-item-label {
     font-family: Garamond;
     font-weight: bold;
@@ -43,4 +44,10 @@ export const CustomSubmitButton = styled.button `
   padding: 10px 70px;
   font-size: 32px;
   font-family: "Playfair Display";
+`
+
+export const FormLayoutTouching = styled.div `
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
 `

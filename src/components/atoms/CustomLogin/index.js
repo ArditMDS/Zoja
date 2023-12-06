@@ -7,7 +7,7 @@ function CustomLogin() {
             <CustomLoginStyle to="login">
                 Login
             </CustomLoginStyle>
-            <CustomRegisterStyle to='test'>
+            <CustomRegisterStyle to='register'>
                 Sign up
             </CustomRegisterStyle>
         </CustomDiv>

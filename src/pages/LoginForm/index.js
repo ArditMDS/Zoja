@@ -24,6 +24,11 @@ function LoginForm() {
                 <CustomForm
                     layout="vertical"
                     onFinish={onFinish}
+                    initialValues={{
+                        email: "",
+                        password: "",
+                        remember: false
+                    }}
                 >
                     <CustomFormItem
                         name="email"
