@@ -74,6 +74,7 @@ function LoginForm() {
                         </CustomSubmitButton>
                     </CustomFormItem>
                 </CustomForm>
+                <div className="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-clientid="zoja-407407"></div>
             </ContainerForm>
         </div>
     )

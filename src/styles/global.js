@@ -35,6 +35,7 @@ export const CustomNormalLink = styled(Link) `
   font-family: Garamond;
   font-weight: bold;
   text-decoration: none;
+  white-space: nowrap;
 `
 
 export const CustomSubmitButton = styled.button `

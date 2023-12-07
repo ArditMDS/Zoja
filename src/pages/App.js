@@ -6,6 +6,7 @@ import LoginForm from "./LoginForm";
 import AuthProvider from "./AuthContext";
 import PageWrapper from "./index";
 import RegisterForm from "./RegisterForm";
+import Homepage from "./Homepage";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                     <Routes>
                         <Route path={routes.login.path} element={<LoginForm />} />
                         <Route path={routes.register.path} element={<RegisterForm/>}/>
+                        <Route path={routes.homepage.path} element={<Homepage/>}/>
                     </Routes>
               </PageWrapper>
           </Router>
