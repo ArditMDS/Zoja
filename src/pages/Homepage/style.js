@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {themes} from "../../styles/themes";
 
 export const ContainerHeader = styled.div `
   position: relative;
@@ -7,4 +6,9 @@ export const ContainerHeader = styled.div `
   left: 0;
 `
 
+export const ContainerArticle = styled.div `
+  padding: 0 40px;
+  display: flex;
+  gap: 10px;
+`
 

@@ -12,13 +12,13 @@ function NavBar(){
     return(
         <NavBarStyle>
             <TitleName/>
-            <MixLinkIcon link="test" icon={faHouse} iconColor={themes.color.primary.light} textColor={themes.color.secondary.classic}>
+            <MixLinkIcon link="/homepage" icon={faHouse} iconColor={themes.color.primary.light} textColor={themes.color.secondary.classic}>
                 Homepage
             </MixLinkIcon>
-            <MixLinkIcon link="test" icon={faInfoCircle} iconColor={themes.color.primary.light} textColor={themes.color.secondary.classic}>
+            <MixLinkIcon link="/about" icon={faInfoCircle} iconColor={themes.color.primary.light} textColor={themes.color.secondary.classic}>
                 About
             </MixLinkIcon>
-            <MixLinkIcon link="test" icon={faNewspaper} iconColor={themes.color.primary.light} textColor={themes.color.secondary.classic}>
+            <MixLinkIcon link="/articles" icon={faNewspaper} iconColor={themes.color.primary.light} textColor={themes.color.secondary.classic}>
                 Articles
             </MixLinkIcon>
             <MixLinkIcon link="test" icon={faBookOpen} iconColor={themes.color.primary.light} textColor={themes.color.secondary.classic}>

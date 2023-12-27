@@ -27,11 +27,11 @@ function RegisterForm() {
                     if (response.code_response === 200) {
                         message.success('Mot de passe modifié')
                         navigate(routes.login.path)
-                    } else if (response.code_response == 409){
+                    } else if (response.code_response === 409){
                         message.error(
                             "This ID is already taken",
                         )
-                    } else if (response.code_response == 400) {
+                    } else if (response.code_response === 400) {
                         message.error(
                             "This email is already taken",
                         )

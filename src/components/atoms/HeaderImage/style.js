@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {themes} from "../../../styles/themes";
 
 export const HeaderImageStyle = styled.div `
   width: 100%;

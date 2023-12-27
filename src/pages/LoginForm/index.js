@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import MainTitle from "../../components/atoms/MainTitle";
 import {
     CustomCheckbox,
@@ -11,11 +11,16 @@ import {
 import {ContainerForm, ContainerFormCheck} from "./style";
 import {themes} from "../../styles/themes";
 import useAuth from "../../hooks/useAuth";
+import {Spin} from "antd";
+import { LoadingOutlined } from '@ant-design/icons';
 
 function LoginForm() {
     const { login } = useAuth()
+    const [loading, setLoading] = useState(false);
     const onFinish = async (formValues) => {
+        setLoading(true);
         await login({ email: formValues.email, password: formValues.password, remember: formValues.remember })
+        setLoading(false);
     }
     return (
         <div>
@@ -73,6 +78,19 @@ function LoginForm() {
                             Submit
                         </CustomSubmitButton>
                     </CustomFormItem>
+                    {
+                        loading ??
+                        <Spin
+                            indicator={
+                                <LoadingOutlined
+                                    style={{
+                                        fontSize: 24,
+                                    }}
+                                    spin
+                                />
+                            }
+                        />
+                    }
                 </CustomForm>
                 <div className="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-clientid="zoja-407407"></div>
             </ContainerForm>
