@@ -1,15 +1,24 @@
 import React, {useEffect, useState} from "react";
-import {ContainerArticle, ContainerHeader} from "./style";
+import {
+    ArticleSection,
+    ArticleSectionIcon,
+    ArticleSectionTitle, ArticleUpperContent,
+    ArticleUpperInfo, ArticleUpperParagraph,
+    ContainerArticle,
+    ContainerHeader
+} from "./style";
 import MainTitle from "../../components/atoms/MainTitle";
 import HeaderFilter from "../../components/atoms/HeaderFilter";
 import HeaderImage from "../../components/atoms/HeaderImage";
 import {message} from "antd";
 import Articles from "../../components/atoms/Articles";
 import dayjs from "dayjs";
+import {faBook, faBrain} from "@fortawesome/free-solid-svg-icons";
+import {themes} from "../../styles/themes";
 
 function Homepage() {
     const [posts, setPosts] = useState([]);
-    function getClients() {
+    function getPosts() {
         fetch(`/api/posts?limit=3`, {
             method: 'GET',
             headers: {
@@ -32,7 +41,7 @@ function Homepage() {
     }
 
     useEffect(() => {
-        getClients()
+        getPosts()
         // eslint-disable-next-line
     }, [posts.length])
 
@@ -44,12 +53,38 @@ function Homepage() {
             </ContainerHeader>
             <MainTitle>Recent articles</MainTitle>
             <ContainerArticle>
-                {posts.map((item) => {
+                {posts.map((item, index) => {
                     return (
-                        <Articles title={item.title} description={item.content} date={dayjs(item.creation_date.date).format('DD-MM-YYYY hh:mm')}></Articles>
+                        <Articles key={index} title={item.title} description={item.content} date={dayjs(item.creation_date.date).format('DD-MM-YYYY hh:mm')}></Articles>
                     )
                 })}
             </ContainerArticle>
+            <ArticleSection>
+                <ArticleUpperInfo color={themes.color.primary.classic}>
+                    <ArticleSectionTitle>Lorem ipsum dolor sit amet consectetur. </ArticleSectionTitle>
+                    <ArticleUpperContent>
+                        <ArticleSectionIcon color={themes.color.primary.light} icon={faBrain} />
+                        <ArticleUpperParagraph>
+                            Lorem ipsum dolor sit amet consectetur.
+                            Dolor at nunc suscipit bibendum cursus lacus praesent urna.
+                            Justo tristique lacus tempor egestas. Vitae vitae eu consequat ultrices amet aenean.
+                            Eu vitae sagittis fusce pellentesque eu viverra.
+                        </ArticleUpperParagraph>
+                    </ArticleUpperContent>
+                </ArticleUpperInfo>
+                <ArticleUpperInfo color={themes.color.primary.light}>
+                    <ArticleSectionTitle>Lorem ipsum dolor sit amet consectetur. </ArticleSectionTitle>
+                    <ArticleUpperContent>
+                        <ArticleUpperParagraph>
+                            Lorem ipsum dolor sit amet consectetur.
+                            Dolor at nunc suscipit bibendum cursus lacus praesent urna.
+                            Justo tristique lacus tempor egestas. Vitae vitae eu consequat ultrices amet aenean.
+                            Eu vitae sagittis fusce pellentesque eu viverra.
+                        </ArticleUpperParagraph>
+                        <ArticleSectionIcon color={themes.color.primary.classic} icon={faBook} />
+                    </ArticleUpperContent>
+                </ArticleUpperInfo>
+            </ArticleSection>
         </main>
     )
 }

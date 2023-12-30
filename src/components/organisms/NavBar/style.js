@@ -13,5 +13,5 @@ export const NavBarStyle = styled.nav `
   align-items: center;
   background-color: ${themes.color.primary.classic};
   filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.25));
-  z-index: 99999;
+  //z-index: 99999;
 `

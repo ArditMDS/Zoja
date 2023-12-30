@@ -4,7 +4,6 @@ import {themes} from "../../../styles/themes";
 export const CustomFooter = styled.footer `
   background-color: ${themes.color.primary.classic};
   padding: 50px 50px 0 50px;
-  margin-top: 40px;
 `
 
 export const FooterContainerLinkSection = styled.section `

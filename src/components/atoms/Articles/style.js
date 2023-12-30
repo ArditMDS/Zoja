@@ -28,11 +28,12 @@ export const ContainerArticleButton = styled.div `
 
 export const ArticleDescriptionContent = styled.p `
   font-family: Garamond;
-  overflow: hidden;
+  width: 100%;
 `
 
 export const ArticleDescription = styled.div `
   max-width: 100%;
+  min-width: calc(100% - 20px);
   height: 130px;
   background-color: white;
   position: absolute;
@@ -63,7 +64,8 @@ export const ArticleTitle = styled.h2 `
 `
 
 export const CustomContainer = styled.div `
-  width: calc(100%/3) ;
+  width: calc(100%/3.3) ;
+  margin-bottom: 50px;
   height: 400px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 10px 10px 0 0;

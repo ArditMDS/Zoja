@@ -13,6 +13,11 @@ const routes = {
         path: '/homepage',
         name: 'CLIENT',
         access: 'CLIENT'
+    },
+    articles: {
+        path: '/all-articles',
+        name: 'all-articles',
+        access: 'CLIENT'
     }
 }
 

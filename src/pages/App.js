@@ -7,6 +7,7 @@ import AuthProvider from "./AuthContext";
 import PageWrapper from "./index";
 import RegisterForm from "./RegisterForm";
 import Homepage from "./Homepage";
+import AllArticles from "./AllArticles";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                         <Route path={routes.login.path} element={<LoginForm />} />
                         <Route path={routes.register.path} element={<RegisterForm/>}/>
                         <Route path={routes.homepage.path} element={<Homepage/>}/>
+                        <Route path={routes.articles.path} element={<AllArticles/>}/>
                     </Routes>
               </PageWrapper>
           </Router>
